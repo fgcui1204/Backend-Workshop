@@ -4,6 +4,7 @@
 *.dat
 *.log
 
+
 # Build results
 [Dd]ebug/
 [Rr]elease/
@@ -45,4 +46,4 @@ StyleCop.Cache
 .idea/
 */.vs/
 .vs/
-
+.DS_Store

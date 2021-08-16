@@ -9,7 +9,6 @@ namespace BasicCSharp
         public void should_get_minimum_value_of_a_number_type()
         {
             // change "default(sbyte)" to correct value. You should not explicitly write -128.
-            //sbyte minimum = default(sbyte);
             sbyte minimum = sbyte.MinValue;
 
             Assert.Equal(-128, minimum);
@@ -19,7 +18,7 @@ namespace BasicCSharp
         public void should_get_maximum_value_of_a_number_type()
         {
             // change "default(int)" to correct value. You should not explicitly write 2147483647.
-            int maximum = default(int);
+            int maximum = int.MaxValue;
 
             Assert.Equal(2147483647, maximum);
         }
@@ -28,7 +27,7 @@ namespace BasicCSharp
         public void should_get_correct_type_for_floating_point_number_without_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof(string);
+            Type guessTheType = typeof(double);
 
             Assert.Equal(guessTheType, 1.0.GetType());
             Assert.Equal(guessTheType, 1E3.GetType());
@@ -38,7 +37,7 @@ namespace BasicCSharp
         public void should_get_correct_type_for_integer_without_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof(string);
+            Type guessTheType = typeof(int);
 
             Assert.Equal(guessTheType, 1.GetType());
             Assert.Equal(guessTheType, 0x123.GetType());
@@ -48,7 +47,7 @@ namespace BasicCSharp
         public void should_get_correct_type_for_M_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof(string);
+            Type guessTheType = typeof(decimal);
 
             Assert.Equal(guessTheType, 1M.GetType());
         }
@@ -57,7 +56,7 @@ namespace BasicCSharp
         public void should_get_correct_type_for_L_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof(string);
+            Type guessTheType = typeof(long);
 
             Assert.Equal(guessTheType, 5L.GetType());
         }
@@ -66,7 +65,7 @@ namespace BasicCSharp
         public void should_get_correct_type_for_F_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof(string);
+            Type guessTheType = typeof(float);
 
             Assert.Equal(guessTheType, 5F.GetType());
         }
@@ -78,7 +77,7 @@ namespace BasicCSharp
             long longNumber = originNumber;
 
             // change "default(long)" to correct value.
-            const long expectedResult = default(long);
+            const long expectedResult = 12345;
 
             Assert.Equal(expectedResult, longNumber);
         }
@@ -90,7 +89,7 @@ namespace BasicCSharp
             var shortNumber = (short)originNumber;
 
             // change "default(short)" to correct value.
-            const short expectedResult = default(short);
+            const short expectedResult = 12345;
 
             Assert.Equal(expectedResult, shortNumber);
         }
@@ -102,7 +101,7 @@ namespace BasicCSharp
             var byteNumber = (byte)originNumber;
 
             // change "default(byte)" to correct value.
-            const byte expectedResult = default(byte);
+            const byte expectedResult = 52;
 
             Assert.Equal(expectedResult, byteNumber);
         }
@@ -115,7 +114,7 @@ namespace BasicCSharp
             var castedBackNumber = (int)floatingPointNumber;
 
             // change "default(int)" to correct value.
-            const int expectedResult = default(int);
+            const int expectedResult = 100000000;
 
             Assert.Equal(expectedResult, castedBackNumber);
         }
@@ -128,7 +127,7 @@ namespace BasicCSharp
             var castedBackNumber = (int)decimalNumber;
 
             // change "default(int)" to correct value.
-            const int expectedResult = default(int);
+            const int expectedResult = 100000001;
 
             Assert.Equal(expectedResult, castedBackNumber);
         }
@@ -140,7 +139,7 @@ namespace BasicCSharp
             int suffixIncrementalReturnValue = numberToIncrement++;
 
             // change "default(int)" to correct value.
-            const int expectedResult = default(int);
+            const int expectedResult = 1;
 
             Assert.Equal(expectedResult, suffixIncrementalReturnValue);
         }
@@ -152,7 +151,7 @@ namespace BasicCSharp
             int prefixIncrementalReturnValue = ++numberToIncrement;
 
             // change "default(int)" to correct value.
-            const int expectedResult = default(int);
+            const int expectedResult = 2;
 
             Assert.Equal(expectedResult, prefixIncrementalReturnValue);
         }
@@ -164,7 +163,7 @@ namespace BasicCSharp
             int denominator = 0;
 
             // change "typeof(ArgumentException)" to correct exception type.
-            Type desiredExceptionType = typeof(ArgumentException);
+            Type desiredExceptionType = typeof(DivideByZeroException);
 
             Assert.NotEqual(typeof(ArithmeticException), desiredExceptionType);
             Assert.NotEqual(typeof(SystemException), desiredExceptionType);
@@ -179,7 +178,7 @@ namespace BasicCSharp
             --minimumValue;
 
             // change "default(int)" to correct value.
-            const int expectedResult = default(int);
+            const int expectedResult = 2147483647;
 
             Assert.Equal(expectedResult, minimumValue);
         }
@@ -190,7 +189,7 @@ namespace BasicCSharp
             int minimumValue = int.MinValue;
 
             // change "typeof(ArgumentException)" to correct exception type.
-            Type desiredExceptionType = typeof(ArgumentException);
+            Type desiredExceptionType = typeof(OverflowException);
 
             Assert.NotEqual(typeof(ArithmeticException), desiredExceptionType);
             Assert.NotEqual(typeof(SystemException), desiredExceptionType);
@@ -203,7 +202,7 @@ namespace BasicCSharp
         public void should_do_complement_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = -16;
 
             Assert.Equal(expectedResult, ~0xf);
         }
@@ -212,7 +211,7 @@ namespace BasicCSharp
         public void should_do_and_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = 0x30;
 
             Assert.Equal(expectedResult, (0xf0 & 0x33));
         }
@@ -221,7 +220,7 @@ namespace BasicCSharp
         public void should_do_or_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = 0xf3;
 
             Assert.Equal(expectedResult, (0xf0 | 0x33));
         }
@@ -230,7 +229,7 @@ namespace BasicCSharp
         public void should_do_exclusive_or_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = 0xf0f0;
 
             Assert.Equal(expectedResult, (0xff00 ^ 0x0ff0));
         }
@@ -239,7 +238,7 @@ namespace BasicCSharp
         public void should_do_shift_left_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = 0x80;
 
             Assert.Equal(expectedResult, (0x20 << 2));
         }
@@ -248,7 +247,7 @@ namespace BasicCSharp
         public void should_do_shift_right_operation()
         {
             // change "default(int)" to correct value. You should use Hex representation.
-            const int expectedResult = default(int);
+            const int expectedResult = 0x10;
 
             Assert.Equal(expectedResult, (0x20 >> 1));
         }
@@ -261,7 +260,7 @@ namespace BasicCSharp
             Type arithmeticOperatorResultType = (shortNumber + anotherShortNumber).GetType();
 
             // change "typeof(short)" to correct type.
-            Type expectedResult = typeof(short);
+            Type expectedResult = typeof(int);
 
             Assert.Equal(expectedResult, arithmeticOperatorResultType);
         }
@@ -273,7 +272,7 @@ namespace BasicCSharp
             const double denominator = 0.0;
 
             // change "default(double)" to correct value.
-            const double expectedResult = default(double);
+            const double expectedResult = Double.PositiveInfinity;
 
             Assert.Equal(expectedResult, (numerator / denominator));
         }
@@ -284,7 +283,7 @@ namespace BasicCSharp
             const double numerator = 0;
             const double denominator = 0;
 
-            const double expectedResult = default(double);
+            const double expectedResult = Double.NaN;
 
             Assert.Equal(expectedResult, (numerator / denominator));
         }
